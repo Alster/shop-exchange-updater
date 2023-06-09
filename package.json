@@ -1,0 +1,23 @@
+{
+  "name": "shop-exchange-updater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alster/shop-exchange-updater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alster/shop-exchange-updater/issues"
+  },
+  "homepage": "https://github.com/Alster/shop-exchange-updater#readme",
+  "dependencies": {
+    "ioredis": "^5.3.2",
+    "redis": "^4.6.7"
+  }
+}
