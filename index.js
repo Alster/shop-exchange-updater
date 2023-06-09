@@ -22,8 +22,14 @@ redisClient.on('error', (error) => {
         const data = await response.json();
 
         data.forEach(item => {
+            console.log(JSON.stringify(item))
             const key = `${item.currencyCodeA}_${item.currencyCodeB}`;
-            const value = `${item.rateBuy}_${item.rateCross}`;
+            const value = `${item.rateBuy}_${item.rateSell}`;
+            if (!item.rateBuy) {
+                console.error(`[Redis] RateBuy is not set for ${key}`);
+                return;
+            }
+            console.log(`[Redis] Set ${key} to ${value}`)
             redisClient.set(key, value);
         });
 
