@@ -6,8 +6,8 @@ RUN corepack enable
 # Installing dependencies:
 WORKDIR /app
 ENV NODE_ENV production
-USER node
 COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,sharing=locked,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+USER node
 # Running the application:
 CMD ["node", "index.js"]
