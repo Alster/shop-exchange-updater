@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  shop-exchange-updater:
+    hostname: unicorn-shop-exchange-updater
+    image: unicorn-shop-exchange-updater
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
